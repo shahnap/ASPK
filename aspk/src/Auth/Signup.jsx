@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React from 'react'
 import { useForm } from "react-hook-form";
-import { BaseUrl } from '../config/Config';
+import { BaseUrl } from '../configs/config/Config';
 
 
 function Signup() {
@@ -91,7 +91,7 @@ console.log(error);
             </div>
           </form>
           <div class="mt-4 text-sm text-gray-600 text-center">
-            <p>Do you have an account? <a href="#" class="text-black hover:underline">Login</a>
+            <p>Do you have an account? <a href="/" class="text-black hover:underline">Login</a>
             </p>
           </div>
         </div>
