@@ -1,6 +1,40 @@
+import axios from 'axios';
 import React from 'react'
+import { useForm } from "react-hook-form";
+import { BaseUrl } from '../configs/config/Config';
+import toast from 'react-hot-toast';
+import { Navigate, useNavigate } from 'react-router-dom';
+
 
 function Login() {
+  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const navigate = useNavigate()
+
+
+
+
+
+
+  const onSubmit = (data)=>{
+    console.log("data",data);
+    const Details = {
+      username:data.email,
+      password:data.password
+    }
+    axios.post(BaseUrl+`login`,Details).then(function(response){
+      console.log(response);
+      if(response.data.message==="Login successful"){
+        navigate("/dashboard")
+  
+      }
+      else if(response.error==="Invalid username or password"){
+        toast.error("Invalid User name or Password")
+      }
+    }).catch(function(err){
+      toast.error("Invalid User name or Password")
+      console.log(err);
+    })
+  }
   return (
  
     <div class="flex h-screen">
@@ -103,7 +137,7 @@ function Login() {
             <p>or with email</p>
           </div> */}     
           {/* --------------------------------------------------- this is for gmail signin and git hub signin -------------------------------------------------------------------*/}
-          <form action="#" method="POST" class="space-y-4">
+          <form onSubmit={handleSubmit(onSubmit)}   class="space-y-4">
        
             {/* <div>
               <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
@@ -111,18 +145,18 @@ function Login() {
             </div> */}
             <div>
               <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-              <input type="text" id="email" name="email" class="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"/>
+              <input type="text" {...register("email")} class="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"/>
             </div>
             <div>
               <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-              <input type="password" id="password" name="password" class="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"/>
+              <input type="password" {...register("password")} class="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"/>
             </div>
             <div>
               <button type="submit" class="w-full bg-black text-white p-2 rounded-md hover:bg-gray-800 focus:outline-none focus:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-colors duration-300">Login</button>
             </div>
           </form>
           <div class="mt-4 text-sm text-gray-600 text-center">
-            <p>Dont have an account? <a href="#" class="text-black hover:underline">Sign Up</a>
+            <p>Dont have an account? <a href="/signup" class="text-black hover:underline">Sign Up</a>
             </p>
           </div>
         </div>
