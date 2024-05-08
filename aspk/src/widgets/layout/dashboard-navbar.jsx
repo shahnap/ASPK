@@ -75,14 +75,7 @@ export function DashboardNavbar() {
           <div className="mr-auto md:mr-4 md:w-56">
             <Input label="Search" />
           </div>
-          <IconButton
-            variant="text"
-            color="blue-gray"
-            className="grid xl:hidden"
-            onClick={() => setOpenSidenav(dispatch, !openSidenav)}
-          >
-            <Bars3Icon strokeWidth={3} className="h-6 w-6 text-blue-gray-500" />
-          </IconButton>
+          
           <Link to="/auth/sign-in">
             <Button
               variant="text"
@@ -178,6 +171,14 @@ export function DashboardNavbar() {
               </MenuItem>
             </MenuList>
           </Menu>
+          <IconButton
+            variant="text"
+            color="blue-gray"
+            className="grid xl:hidden"
+            onClick={() => setOpenSidenav(dispatch, !openSidenav)}
+          >
+            <Bars3Icon strokeWidth={3} className="h-6 w-6 text-blue-gray-500" />
+          </IconButton>
           <IconButton
             variant="text"
             color="blue-gray"
