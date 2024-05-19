@@ -8,7 +8,7 @@ import {
 
 export function ProfileInfoCard({ title, description, details, action }) {
   return (
-    <Card color="transparent" shadow={false}>
+    <Card color="transparent" shadow={false}> 
       <CardHeader
         color="transparent"
         shadow={false}
