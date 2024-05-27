@@ -20,8 +20,9 @@ import { BaseUrl } from '@/configs/config/Config';
 
 function Expense() {
   const [Expense, setExpense] = useState("")
-  const [TempArray, setTempArray] = useState([])
-  const [Modal, setModal] = useState(false)
+ 
+  const [response, setresponse] = useState("")
+  
 const [ExpenseData,setExpenseData] = useState([])
 
   useEffect(() => {
@@ -31,19 +32,22 @@ const [ExpenseData,setExpenseData] = useState([])
     }).catch((err)=>{
      console.log(err);
     })
-   }, [])
+   }, [response])
 
   const HandleSubmit = () => {
-    const Expense = {
-        expense: 'Sample Expense', // Ensure this matches your schema
+    const ExpenseList = {
+        expense: Expense, // Ensure this matches your schema
         date: new Date() // Optionally include a date or let the backend default it
     };
 
-    axios.post(BaseUrl + 'master/setexpense', Expense)
+    axios.post(BaseUrl + 'master/setexpense', ExpenseList)
         .then(function (response) {
             console.log(response);
             if (response.data.message === "Expense Added successfully") {
                 toast.success("Expense Added successfully");
+                setresponse(response)
+                setExpense("")
+                
             }
         })
         .catch(function (err) {
