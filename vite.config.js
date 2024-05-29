@@ -8,6 +8,7 @@ export default defineConfig({
       '@': '/src',
       screens: '/src/screens',
       components: '/src/components',
+      widgets: '/src/widgets', // Ensure this matches your structure
     }
   }
 });
