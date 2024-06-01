@@ -9,11 +9,12 @@ function App() {
     <Routes>
       <Route path="/dashboard/*" element={<Dashboard />} />
       <Route path="/auth/*" element={<Auth />} />
-      {/* <Route path="*" element={<Navigate to="/dashboard/home" replace />} /> */}
+      <Route path="*" element={<Navigate to="/dashboard/home" replace />} />
       <Route path="/dashboard" element ={<Navigate to="/dashboard/home" replace />}/>
 
       <Route path="/" element ={<Login />}/>
       <Route path="/signup" element ={<Signup/>}/>
+
 
 
     </Routes>

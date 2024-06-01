@@ -18,6 +18,7 @@ import toast from 'react-hot-toast';
 import { BaseUrl } from '@/configs/config/Config';
 
 
+
 function Expense() {
   const [Expense, setExpense] = useState("")
  
@@ -34,6 +35,7 @@ const [ExpenseData,setExpenseData] = useState([])
     })
    }, [response])
 
+  
   const HandleSubmit = () => {
     const ExpenseList = {
         expense: Expense, // Ensure this matches your schema
@@ -42,7 +44,6 @@ const [ExpenseData,setExpenseData] = useState([])
 
     axios.post(BaseUrl + 'master/setexpense', ExpenseList)
         .then(function (response) {
-            console.log(response);
             if (response.data.message === "Expense Added successfully") {
                 toast.success("Expense Added successfully");
                 setresponse(response)
@@ -50,11 +51,15 @@ const [ExpenseData,setExpenseData] = useState([])
                 
             }
         })
-        .catch(function (err) {
-            toast.error("Expense Add failed");
-            console.log(err);
-        });
+      .catch((err)=>{
+        console.log(err);
+        toast.error("Expense Add failed");
+      })
 };
+
+
+
+
 
  
   return (
@@ -107,7 +112,7 @@ onChange={(e)=>setExpense(e.target.value)}
     </label>
     
   </div>
-  <div className='w-[15%] md:w-[10%] items-center justify-center flex border ml-1 border-gray-500 rounded-md'>
+  <div className='w-[15%] md:w-[10%] items-center   justify-center flex border ml-1 border-gray-500 rounded-md'>
   <IoMdSend style={{fontSize:'1.3rem'}} onClick={HandleSubmit}/>
   </div>
 </div>  
