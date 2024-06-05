@@ -145,7 +145,7 @@ function AddExpense() {
   <div className='flex-grow overflow-y-auto'>
     <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white md:max-w-full">
       <div className="p-4 ">
-        <div className="font-bold text-xl mb-2 justify-center flex">TODAY</div>
+        {/* <div className="font-bold text-xl mb-2 justify-center flex">TODAY</div> */}
         {
           Data?.map((item, index) => (
             <div key={index} className='flex items-center border-b pb-4 '>
