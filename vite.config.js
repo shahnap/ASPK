@@ -7,9 +7,10 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': '/src',
-      screens: '/src/screens',
-      components: '/src/components',
-      widgets: '/src/widgets', // Ensure this matches your structure
+      'screens': '/src/screens',
+      'components': '/src/components',
+      'widgets': '/src/widgets', // Ensure this matches your structure
     }
   }
 });
+

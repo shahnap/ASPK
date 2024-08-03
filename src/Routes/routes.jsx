@@ -8,10 +8,10 @@ import {
 } from "@heroicons/react/24/solid";
 import { Home, Profile, Tables, Notifications } from "@/pages/dashboard";
 import { SignIn, SignUp } from "@/pages/auth";
-import Expense from "./Masters/Expense/Expense";
-import AddExpense from "./Main Page/AddExpense";
-import ExpenseReport from "../src/Reports/ExpenseReport"
-import ToDo from "./pages/ToDo";
+import Expense from "../Masters/Expense/Expense";
+import AddExpense from "../Main Page/AddExpense";
+import ExpenseReport from "../Reports/ExpenseReport"
+import ToDo from "../pages/ToDo";
 
 const icon = {
   className: "w-5 h-5 text-inherit",

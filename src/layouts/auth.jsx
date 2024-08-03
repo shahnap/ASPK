@@ -6,7 +6,8 @@ import {
   ArrowRightOnRectangleIcon,
 } from "@heroicons/react/24/solid";
 import { Navbar, Footer } from "@/widgets/layout";
-import routes from "./../routes";
+import routes from "@/Routes/routes";
+
 
 export function Auth() {
   const navbarRoutes = [
