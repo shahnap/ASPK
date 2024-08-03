@@ -2,6 +2,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { Dashboard, Auth } from "@/layouts";
 import Login from "./Auth/Login";
 import Signup from "./Auth/Signup";
+import ToDo from "./pages/ToDo";
 
 
 function App() {
@@ -14,6 +15,8 @@ function App() {
 
       <Route path="/" element ={<Login />}/>
       <Route path="/signup" element ={<Signup/>}/>
+      <Route path="/to-do" element ={<ToDo/>}/>
+
 
 
 
