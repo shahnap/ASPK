@@ -21,7 +21,7 @@ function Login() {
       username:data.email,
       password:data.password
     }
-    axios.post(BaseUrl+`login`,Details).then(function(response){
+    axios.post(BaseUrl+`/login`,Details).then(function(response){
       console.log(response);
       if(response.data.message==="Login successful"){
         navigate("/dashboard")
