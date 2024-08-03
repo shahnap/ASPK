@@ -21,7 +21,7 @@ function Login() {
       username:data.email,
       password:data.password
     }
-    axios.post(BaseUrl+`/login`,Details).then(function(response){
+    axios.post(BaseUrl+`login`,Details).then(function(response){
       console.log(response);
       if(response.data.message==="Login successful"){
         navigate("/dashboard")
@@ -114,7 +114,7 @@ function Login() {
 
       <div class="w-full bg-gray-100 lg:w-1/2 flex items-center justify-center">
         <div class="max-w-md w-full p-6">
-          <h1 class="text-3xl font-semibold mb-6 text-black text-center">Loginn</h1>
+          <h1 class="text-3xl font-semibold mb-6 text-black text-center">Login</h1>
           <h1 class="text-sm font-semibold mb-6 text-gray-500 text-center">Join to Our Community with all time access and free </h1>
           {/* <div class="mt-4 flex flex-col lg:flex-row items-center justify-between">
             <div class="w-full lg:w-1/2 mb-2 lg:mb-0">
